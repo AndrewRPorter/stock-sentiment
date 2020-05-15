@@ -1,6 +1,6 @@
 flask
 pytest
-requests==2.11.1
+requests
 gunicorn
 textblob==0.15.2
 PyYAML
