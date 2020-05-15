@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    {% include "analytics.html" %}
+    
+    <meta charset="utf-8">
+    <title>StockSent | Fast and accurate stock market sentiment analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+
+<body>
+
+    {% include "nav.html" %}
+
+    <main>
+
+        <div class="flash">
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{error}}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="auth-form">
+            <form class="form-signin" method="post">
+                {{ form.csrf_token }}
+                <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+                {{ form.first_name.label(for="firstName", class="sr-only") }}
+                {{ form.first_name(id="firstName", class="form-control", autofocus=true, **{"placeholder":"First name"}) }}
+                {{ form.last_name.label(for="lastName", class="sr-only") }}
+                {{ form.last_name(id="lastName", class="form-control", **{"placeholder":"Last name"}) }}
+                {{ form.email.label(for="inputEmail", class="sr-only") }}
+                {{ form.email(id="inputEmail", class="form-control", **{"placeholder":"Email"}) }}
+                {{ form.password.label(for="inputPassword", class="sr-only") }}
+                {{ form.password(id="inputPassword", class="form-control", **{"placeholder":"Password"}) }}
+                {{ form.confirm_password.label(for="confirmPassword", class="sr-only") }}
+                {{ form.confirm_password(id="confirmPassword", class="form-control", **{"placeholder":"Re-type password"}) }}
+                {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+                <label>
+                    <br>
+                    &nbsp;<a href="/login" style="color: blue;">Already have an account?</a>
+                </label>
+            </form>
+        </div>
+    </main>
+
+    {% include "footer.html" %}
+
+</body>
+
+</html>

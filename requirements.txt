@@ -1,0 +1,11 @@
+flask
+pytest
+requests==2.11.1
+gunicorn
+textblob==0.15.2
+PyYAML
+tweepy
+pyrebase
+flask_wtf
+wtforms
+xxhash

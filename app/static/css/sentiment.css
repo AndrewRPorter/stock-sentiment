@@ -1,0 +1,9 @@
+.neutral p {
+    color: gray;
+}
+.positive p {
+    color: green;
+}
+.negative p {
+    color: red;
+}

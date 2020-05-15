@@ -1,0 +1,19 @@
+header {
+  border-bottom: 1px solid #efefef;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.logo {
+  float: left;
+}
+.logo h2 {
+  font-weight: 700;
+  margin-top: 0px;
+}
+.release-notes {
+  float: right;
+}
+.release-notes h2 {
+  font-weight: 700;
+  margin-top: 0px;
+}

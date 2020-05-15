@@ -1,0 +1,30 @@
+<header class="u-clearfix">
+    <div class="logo">
+        <a href="/" rel="noopener">
+            <h2>StockSent</h2>
+        </a>
+    </div>
+    {% if user %}
+    <div class="release-notes">
+        <a href="/logout">
+            <h2>Logout</h2>
+        </a>
+    </div>
+    <div class="release-notes" style="margin-right: 12px;">
+        <a href="/profile">
+            <h2>Profile</h2>
+        </a>
+    </div>
+    {% else %}
+    <div class="release-notes">
+        <a href="/signup">
+            <h2>Sign Up</h2>
+        </a>
+    </div>
+    <div class="release-notes" style="margin-right: 12px;">
+        <a href="/login">
+            <h2>Log In</h2>
+        </a>
+    </div>
+    {% endif %}
+</header>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    {% include "analytics.html" %}
+    
+    <meta charset="utf-8">
+    <title>StockSent | Fast and accurate stock market sentiment analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- SH JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/shCore.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/shBrushPython.js') }}"></script>
+
+    <!-- SH CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sh/shCore.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sh/shThemeDefault.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/api.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+
+<body>
+
+    {% with user=user %} {% include "nav.html" %} {% endwith %}
+
+    <main>
+        <div class="container">
+
+            <div class="row">
+                <h3>Getting Started</h3>
+                <div class="info">
+                    <p>The StockSent API provides an interface for accessing news sentiment
+                        from various sources</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Options</h3>
+                <div class="info">
+                    <table class="table table-bordered api-table">
+                        <tr>
+                            <th>Option</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">symbol</td>
+                            <td>string</td>
+                            <td>Ticker symbol to get market news for</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">key</td>
+                            <td>string</td>
+                            <td class="description">API key</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Endpoint</h3>
+                <div class="info">
+                    <p><a class="link" target="_blank" href="/api/1.0/AAPL?key=3ekTxXeyh6cb5fJGkGt0bgFhHtwUy0ov">/api/1.0/AAPL?key=3ekTxXeyh6cb5fJGkGt0bgFhHtwUy0ov</a></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Responses</h3>
+                <div class="info">
+                    <table class="table table-bordered api-table">
+                        <tr>
+                            <th>Key</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">ticker</td>
+                            <td>string</td>
+                            <td class="description">Ticker symbol for market news</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">totalResults</td>
+                            <td>int</td>
+                            <td class="description">Total number of articles in request</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">timestamp</td>
+                            <td>int</td>
+                            <td class="description">Unix Timestamp of when request was made</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">results</td>
+                            <td>array</td>
+                            <td class="description">Array of all articles from search</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">article</td>
+                            <td>string</td>
+                            <td class="description">Article title</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">confidence</td>
+                            <td>float</td>
+                            <td class="description">Confidence of analysis</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">description</td>
+                            <td>string</td>
+                            <td class="description">Article description</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">sentiment</td>
+                            <td>string</td>
+                            <td class="description">Sentiment: positive, negative, neutral</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">url</td>
+                            <td>string</td>
+                            <td class="description">url of article</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">averageConfidence</td>
+                            <td>float</td>
+                            <td class="description">Average confidence of all the articles</td>
+                        </tr>
+                        <tr>
+                            <td class="td-bold">averageSentiment</td>
+                            <td>string</td>
+                            <td class="description">Average sentiment of all the articles</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Python Example</h3>
+                <div class="info">
+                    <div class="code-block">
+                        <script type="text/javascript" src="{{ url_for('static', filename='js/syntaxhighlighter.min.js') }}"></script>
+                        <pre class="brush: python">
+            import requests
+            r = requests.get("https://stocksent.io/api/1.0/AAPL?key=3ekTxXeyh6cb5fJGkGt0bgFhHtwUy0ov")
+            data = r.json()
+            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include "footer.html" %}
+
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all()
+    </script>
+
+</body>
+
+</html>

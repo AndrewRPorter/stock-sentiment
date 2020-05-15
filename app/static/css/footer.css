@@ -1,0 +1,37 @@
+footer {
+  padding: 25px 0;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  max-width: 960px;
+  height: 101px;
+  border-top: 1px solid #efefef;
+  clear: both;
+}
+.option {
+  float: left;
+  width: 50%;
+  padding-right: 5px;
+  text-align: center;
+}
+.option p {
+  font-weight: 300;
+  font-size: 15px;
+  padding-top: 3px;
+  color: black;
+  text-align: center;
+}
+.option svg  {
+  width: 20px;
+  height: 20px;
+}
+.option i {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Roboto, sans-serif;
+}
+i:hover {
+  fill: #0056b3;
+  color: #0056b3;
+  text-decoration: none;
+}

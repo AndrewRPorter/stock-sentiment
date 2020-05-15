@@ -1,0 +1,47 @@
+.heading {
+    max-width: 996px;
+}
+.info {
+    width: 100%;
+    margin: 15px auto;
+}
+.info p {
+    max-width: 996px;
+    float: left;
+    clear: both;
+    display: block;
+}
+.api-table {
+    max-width: 996px;
+    table-layout: fixed;
+    width: 100%;
+}
+.code-block {
+    max-width: 996px;
+    float: left;
+    width: 100%;
+}
+.link {
+    color: blue;
+}
+.link:visited { text-decoration: none; color:blue; }
+.td-bold {
+    font-weight: bold;
+}
+td, th {
+    text-align: left;
+    width: 50%;
+}
+h2, h3 {
+    margin-top: 15px;
+    float: left;
+}
+table {
+
+}
+.description {
+    width: 10%;
+}
+.row {
+    clear: both;
+}
